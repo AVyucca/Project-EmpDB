@@ -1,0 +1,37 @@
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #041835;
+  padding: 20px;
+}
+
+.profile-pic {
+  text-align: center;
+}
+
+.profile-pic img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Add spacing between profile picture and nav buttons */
+nav {
+  margin-top: 150px; /* ⬅️ Pushes buttons down */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background-color: #7c8f9e;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.active {
+  background-color: #0b7dda;
+}

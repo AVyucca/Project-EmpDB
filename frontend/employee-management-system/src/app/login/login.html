@@ -1,28 +1,25 @@
-<div class="login-background">
-  <div class="login-wrapper">
-    <div class="login-card">
-      <h1 class="brand-title">EmpHub</h1>
-      <p class="card-subtitle">Please log in to continue</p>
+<div class="login-wrapper">
+  <div class="login-card">
+    <h2>EmployZen</h2>
+    <p>Login to your Dashboard</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Enter your email" />
+        <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          Valid email is required.
+        </small>
+      </div>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <input type="email" placeholder="Email" formControlName="email" />
-          <div class="error" *ngIf="submitted && f['email'].errors"
->
-            Valid email is required
-          </div>
-        </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" placeholder="Enter your password" />
+        <small *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password is required.
+        </small>
+      </div>
 
-        <div class="form-group">
-          <input type="password" placeholder="Password" formControlName="password" />
-          <div class="error" *ngIf="submitted && f['password'].errors">
-
-            Alphanumeric password is required
-          </div>
-        </div>
-
-        <button type="submit" [disabled]="loginForm.invalid" class="btn btn-success">Login</button>
-      </form>
-    </div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </form>
   </div>
 </div>

@@ -1,1 +1,6 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <app-sidebar></app-sidebar>  <!-- This loads your sidebar -->
+  <div class="main-content">
+    <router-outlet></router-outlet> <!-- This loads child routes like home -->
+  </div>
+</div>
