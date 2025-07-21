@@ -1,0 +1,28 @@
+<div class="projects-section">
+  <h2>Projects</h2>
+
+  <table class="project-table">
+    <thead>
+      <tr>
+        <th>Manager Name</th>
+        <th>Project Name</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>
+          <img [src]="project.avatar" alt="avatar" class="avatar" />
+          {{ project.manager }}
+        </td>
+        <td>{{ project.name }}</td>
+        <td>
+          <span class="status" [ngClass]="project.status === 'Complete' ? 'complete' : 'progress'">
+            {{ project.status }}
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

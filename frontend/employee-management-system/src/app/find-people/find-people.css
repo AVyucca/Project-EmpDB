@@ -1,0 +1,52 @@
+.find-people-container {
+  padding: 20px;
+  background-color: #fbe9e7;
+  height: 100%;
+}
+
+.header-tabs {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tab {
+  cursor: pointer;
+  padding-bottom: 4px;
+}
+
+.tab.active {
+  border-bottom: 2px solid black;
+}
+
+.search-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.sort-btn, .filter-btn, .search-input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.people-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.people-table th, .people-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}

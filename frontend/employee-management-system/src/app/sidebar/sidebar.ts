@@ -14,7 +14,7 @@ export class SidebarComponent {
   constructor(private router: Router) {}
 
   navigateTo(route: string): void {
-    this.router.navigate([`/dashboard/${route}`]);
-  }
+  this.router.navigate([`/dashboard/${route}`]);
 }
 
+}
