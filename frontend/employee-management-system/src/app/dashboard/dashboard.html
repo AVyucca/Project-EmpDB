@@ -1,6 +1,12 @@
 <div class="dashboard-container">
-  <app-sidebar></app-sidebar>  <!-- This loads your sidebar -->
+  <!-- Sidebar is always visible -->
+  <app-sidebar (toggleTopPanel)="onToggleTopPanel()"></app-sidebar>
+
   <div class="main-content">
-    <router-outlet></router-outlet> <!-- This loads child routes like home -->
+    <!-- Conditionally show top panel -->
+    <app-top-panel *ngIf="showTopPanel"></app-top-panel>
+
+    <!-- Loads the routed child components -->
+    <router-outlet></router-outlet>
   </div>
 </div>

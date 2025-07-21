@@ -1,10 +1,31 @@
 <div class="sidebar">
+  <!-- Move the toggle icon to the top -->
+  <i class="fi fi-rr-align-justify toggle-icon" (click)="toggleTop()" title="Toggle Top Panel"></i>
+
   <div class="profile-pic">
-    <img src="assets/profile.jpg" alt="Profile" />
+
+    <img src="assets/profile_icon.png" alt="Profile" />
+
+    <!-- <img src="D:\L-Dash\frontend\employee-management-system\src\assets\profile_icon.png" alt="Profile"> -->
   </div>
-  <nav>
-    <button (click)="navigateTo('home')">Home</button>
-    <button (click)="navigateTo('find-people')">Find People</button>
-    <button (click)="navigateTo('projects')">Projects</button>
-  </nav>
+
+  <ul>
+    <li>
+      <i class="fi fi-rr-home"></i>
+      <button (click)="navigateTo('home')">Home</button>
+    </li>
+    <li>
+      <i class="fi fi-rr-users"></i>
+      <button (click)="navigateTo('find-people')">Find People</button>
+    </li>
+    <li>
+      <i class="fi fi-rr-book-bookmark"></i>
+      <button (click)="navigateTo('projects')">Projects</button>
+    </li>
+  </ul>
+
+  <!-- Logout button at bottom -->
+  <div class="logout-container">
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
 </div>
