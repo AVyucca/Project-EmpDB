@@ -1,0 +1,15 @@
+<div class="otp-container">
+  <div class="login-left">
+    <img src="https://quantim.co.uk/wp-content/uploads/2020/12/What-Is-Employee-Management-System.webp" alt="Login Illustration">
+  </div>
+  <div class="otp-right">
+    <h3>Welcome to Yucca IT Solutions</h3>
+    <button class="top-login">Login</button>
+    <label>Enter OTP</label>
+    <div class="otp-inputs">
+      <input maxlength="1" *ngFor="let digit of otp; let i = index" [(ngModel)]="otp[i]" />
+    </div>
+    <button class="submit-btn" (click)="submitOTP()">SUBMIT</button>
+  </div>
+</div>
+

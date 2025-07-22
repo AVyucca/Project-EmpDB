@@ -1,36 +1,25 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [FormsModule],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-  errorMessage: string = '';
+  username = '';
+  password = '';
 
-  constructor(private fb: FormBuilder, private router: Router) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
-  }
+  constructor(private router: Router) {}
 
-  onSubmit(): void {
-    const { email, password } = this.loginForm.value;
-
-    // ✅ Hardcoded credentials check
-    if (email === 'test@yucca.com' && password === 'yucca123') {
-      console.log('Login successful');
-      this.router.navigate(['/dashboard']);
+  onLogin() {
+    if (this.username === 'admin' && this.password === 'admin123') {
+      this.router.navigate(['/otp']);
     } else {
-      this.errorMessage = 'Invalid credentials';
+      alert('Invalid credentials');
     }
   }
 }
-
